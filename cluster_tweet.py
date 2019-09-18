@@ -1,10 +1,10 @@
 import sys
 from PIL import Image
-import headline_image
 import tweepy
 import os
 import shutil
 import keys
+import math
 
 class createCluster():
     name_number = 0
@@ -42,7 +42,7 @@ class createCluster():
         self.count = 0
 
         total_width = max(width_per_row)
-        max_height = (int(self.img_length/self.imgs_per_row) + (self.img_length % self.imgs_per_row)) * createCluster.new_height
+        max_height = math.ceil(self.img_length/self.imgs_per_row) * createCluster.new_height
 
         new_im = Image.new('RGB', (total_width, max_height), self.background)
         x_offset = 0
@@ -89,5 +89,5 @@ for entry in headline_image.masterList:
     newTweet.authorize()
     newTweet.tweet()
     os.remove(path)
-    shutil.rmtree('/Users/calebcarithers/Desktop/news_jpg/static/Resources/Images')
+    # shutil.rmtree('/Users/calebcarithers/Documents/news_jpg/static/Resources/Images')
 

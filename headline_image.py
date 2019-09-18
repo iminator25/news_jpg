@@ -53,3 +53,5 @@ for item in masterList:
     masterList[counter]['urls'] = urlList
     imageFileNumber += 1
     counter += 1
+
+    print(masterList[0]['urls'])
