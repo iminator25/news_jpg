@@ -3,4 +3,6 @@ venv/
 testtest.py
 static/
 .idea
-.DS_Store
+.DS_Store/
+__pycache__/
+.idea/
